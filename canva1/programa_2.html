@@ -1,0 +1,43 @@
+<canvas width="600" height="400"> </canvas> 
+
+<script>
+
+    function dibujarCuadrado(x,y, color) { 
+
+        var pantalla = document.querySelector("canvas"); 
+        var pincel = pantalla.getContext("2d"); 
+        
+        pincel.fillStyle = color; //color
+        pincel.fillRect(x,y,50,50);
+        pincel.strokeStyle = "black"; //color del borde
+        pincel.strokeRect(x,y,50,50);//definir borde  
+        
+    }
+
+    /*
+    //Iteracion condicion WHILE
+
+        var x = 0;//variable fuera del  WHILE
+
+        while (x < 600) {
+
+           //Se llaman las funciones y se ejecutan en el navegador
+           
+            dibujarCuadrado(x,0, "red"); 
+            dibujarCuadrado(x,50, "yellow"); 
+            dibujarCuadrado(x,100, "green"); 
+
+             x = x + 50; //colocar el incremental
+
+        }
+*/
+
+        //ejercicio con FOR 
+        for (var x = 0; x < 600; x = x + 50) {
+
+            dibujarCuadrado(x,0, "red"); 
+            dibujarCuadrado(x,50, "yellow"); 
+            dibujarCuadrado(x,100, "green");  
+        }
+
+    </script>

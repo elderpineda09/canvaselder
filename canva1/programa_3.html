@@ -1,0 +1,39 @@
+<canvas width="600" height="400"> </canvas> 
+
+<script>
+        var pantalla = document.querySelector("canvas"); 
+        var pincel = pantalla.getContext("2d"); 
+        
+        pincel.fillStyle = "grey"; 
+        pincel.fillRect(0,0,600,400);
+
+        function exibirAlerta(evento) {
+
+            var x = evento.pageX - pantalla.offsetLeft; //posicion de la coordenada X al dar click.
+            var y = evento.pageY - pantalla.offsetTop; //posicion de la coordenada Y al dar click.
+
+            console.log(evento);//parametro que se muestra en la consola con sus respectivas propiedades
+            alert( x + "," + y); //alerta y muestra la posicion donde damos click 
+            
+        }
+
+        function dibujarCirculo(evento) {
+
+        var x = evento.pageX - pantalla.offsetLeft; 
+        var y = evento.pageY - pantalla.offsetTop; 
+
+        pincel.fillStyle = "blue";
+        pincel.beginPath();
+        pincel.arc(x,y,10,0,2*3.14);
+        pincel.fill();
+        console.log( x + "," + y);
+
+        }
+
+    /*llama la variable pantalla y usa onclick para mandar la alerta*/
+
+    //pantalla.onclick = exibirAlerta;//no lleva los parentesis porque la funcion pasa como un parametro
+
+    pantalla.onclick = dibujarCirculo;//funcion dibujar el circulo 
+
+    </script>
